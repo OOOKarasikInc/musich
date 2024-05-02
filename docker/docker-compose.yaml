@@ -25,6 +25,8 @@ services:
     restart: always
     env_file:
       - ../envs/mysql.env
+    volumes:
+      - db_data:/var/lib/mysql
 
   composer:
     build:
@@ -48,3 +50,5 @@ services:
     command: "npm run dev"
     volumes:
       - ../app:/var/www/musich
+volumes:
+  db_data:

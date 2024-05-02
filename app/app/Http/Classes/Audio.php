@@ -15,7 +15,7 @@ class Audio
     public static function saveFile(UploadedFile $file)
     {
         $savedFile = $file->move(self::TMP_FILE_PATH, $file->getClientOriginalName());
-        return TgApiConfig::getHost() . '/' . self::PUBLIC_PATH . '/' . $savedFile->getPath() . '/' . $savedFile->getFilename();
+        return TgApiConfig::getHost() . '/' . $savedFile->getPath() . '/' . $savedFile->getFilename();
     }
 
     public static function deleteFile(string $name)

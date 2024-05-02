@@ -24,7 +24,7 @@ class TgApi
                 break;
             case 'sendAudio':
                 $response = $query->post($this->prepareUrl($method), $this->prepareBody($method, $file));
-                //Audio::deleteFile($file->getClientOriginalName());
+                Audio::deleteFile($file->getClientOriginalName());
                 break;
         }
 
@@ -65,8 +65,6 @@ class TgApi
     }
     public function getFileId(array $response)
     {
-        var_dump($response);
-        dd();
         return $response['result']['audio']['file_id'];
     }
 }
