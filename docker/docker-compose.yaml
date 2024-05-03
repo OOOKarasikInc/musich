@@ -47,7 +47,6 @@ services:
     build:
       context: ./dockerfiles
       dockerfile: vue.dockerfile
-    command: "npm run dev"
     volumes:
       - ../app:/var/www/musich
 volumes:
